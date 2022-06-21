@@ -1,0 +1,25 @@
+import comidas.*
+import comensales.*
+describe "Test de Comensales" {
+	
+	method initialize() {
+		
+	}
+	
+	test "Vegetariano satisfecho " {
+		assert.that(true)
+	}
+
+	test "Popular no satisfecho" {
+		assert.notThat(false)	
+	}	
+	
+	test "Paladar Fino, le agrada Hamburgesa de carne de 250 gramos con pan de masa madre." {
+		assert.that(true)	
+	}
+	
+	test "Paladar No Fino, no le agrada Hamburguesa de carne de 250 gramos con pan casero." {
+		assert.notThat(false)	
+	}
+	
+}

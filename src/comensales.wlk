@@ -1,0 +1,6 @@
+import comidas.*
+
+class Comensales {
+	
+	
+}

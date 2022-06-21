@@ -1,0 +1,24 @@
+import comidas.*
+describe "Test de Comidas" {
+	
+	method initialize() {
+		
+	}
+	
+	test "Valoración de la Hambruguesa de Carne con pan casero" {
+		assert.equals(0,0)	
+	}
+
+	test "Valoración de la Hambruguesa Vegetariana, con pan de masaMadre y de garbanzos como legumbre" {
+		assert.equals(0,0)	
+	}	
+	
+	test "Provoleta, de peso 190 y con especias." {
+		assert.that(true)	
+	}
+	
+	test "Parrillada" {
+		assert.equals(0,0)	
+	}
+	
+}
