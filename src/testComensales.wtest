@@ -1,9 +1,39 @@
 import comidas.*
 import comensales.*
+import cocina.*
+
 describe "Test de Comensales" {
 	
+	var veg = new Vegetarianos(peso=68500,comidasComidas=[])
+	var hambV = new HamburguesasVegetarianas(peso=250,pan="masaMadre",legumbre="garbanzos")
+	var hambV2 = new HamburguesasVegetarianas(peso=250,pan="masaMadre",legumbre="lentejas")
+	var prov = new Provoleta(peso=190,tieneEspecias=true)
+	
+	var popu = new HambrePopular(peso=8500, comidasComidas=[])
+	var asado = new Cortes(nombre="asado", peso=250, calidad=10)
+	var entrania = new Cortes(nombre="entraña",peso=200, calidad=7)
+	var chorizo = new Cortes(nombre="chorizo",peso=50, calidad=8)
+	var par = new Parrillada(cortes=[], peso=500)
+	
+	var fino = new PaladarFino(peso=60000, comidasComidas=[])
+	
+	var veg2 = new Vegetarianos(peso=55000,comidasComidas=[])
+	
+	
 	method initialize() {
+		veg.comer(hambV)
+		veg.comer(hambV2)
+		veg.comer(prov)
+
+		par.agregarCorte(entrania)
+		par.agregarCorte(chorizo)
+		par.agregarCorte(asado)		
+		popu.comer(par)
 		
+		veg2.comer(prov)
+		veg2.comer(par)
+		veg2.comer(hambV)
+
 	}
 	
 	test "Vegetariano satisfecho " {
@@ -22,4 +52,8 @@ describe "Test de Comensales" {
 		assert.notThat(false)	
 	}
 	
+	test "lista de comidas que le gustan al comensal"{
+		assert.equals([prov,hambV],cocina.comidasQueLeGustan(veg2))
+	}
+
 }
