@@ -1,18 +1,27 @@
+/*
+1) La mejor opción para manejar el peso en las comidas era la siguiente
+. método abstracto peso en Plato
+. const property peso en Provoleta
+2) En ```esVegetariano()```} de Provoleta te falto la negación. "Las provoletas son _apto vegetariano_ si no tiene especias."
+3) Los panes debían ser 3 objetos y a la hamburguesa debías configurar el pan y preguntarle a cada pan su puntuación
+override method valoracion(){return 60 + pan.puntos()}. Revisa el código que te deje 
+*/
+
 class Plato {
-	var property peso=0
+	method peso()
 	method valoracion()
-	method esAbundante(){return peso>250}	
+	method esAbundante(){return self.peso() >250}	
 	method esVegetariano()
 }
 
 class Provoleta inherits Plato{
 	const property tieneEspecias
-	
+	const property peso
 	override method valoracion(){
 		if(self.esEspecial()){return 120}
 		else{return 80}
 	}
-	override method esVegetariano(){return tieneEspecias}
+	override method esVegetariano(){return not tieneEspecias}
 	method esEspecial(){return self.esAbundante() or tieneEspecias}	
 }
 
@@ -22,13 +31,22 @@ class HamburguesasDeCarne inherits Plato{
 	
 	override method peso(){return 250}
 	override method esVegetariano(){return false}
-	override method valoracion(){return 60 + self.puntosDelPan()}
-	method puntosDelPan(){
-		if(pan=="industrial"){return 0}
-		else if(pan=="casero"){return 20}
-		else{return 45}
-	}
+	override method valoracion(){return 60 + pan.puntos()}
+	
 }
+
+object panIndustrial{
+	method puntos()= 0
+}
+
+object panCasero{
+	method puntos()= 20
+}
+
+object panDeMasa{
+	method puntos()= 45
+}
+
 
 class HamburguesasVegetarianas inherits HamburguesasDeCarne{
 	const legumbre 

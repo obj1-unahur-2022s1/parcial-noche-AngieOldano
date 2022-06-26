@@ -37,18 +37,22 @@ describe "Test de Comensales" {
 	}
 	
 	test "Vegetariano satisfecho " {
+		//Falta
 		assert.that(true)
 	}
 
 	test "Popular no satisfecho" {
+		//Falta
 		assert.notThat(false)	
 	}	
 	
 	test "Paladar Fino, le agrada Hamburgesa de carne de 250 gramos con pan de masa madre." {
+		//Falta
 		assert.that(true)	
 	}
 	
 	test "Paladar No Fino, no le agrada Hamburguesa de carne de 250 gramos con pan casero." {
+		//Falta
 		assert.notThat(false)	
 	}
 	
